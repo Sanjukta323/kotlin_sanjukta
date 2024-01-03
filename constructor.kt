@@ -1,39 +1,22 @@
-class student(
-    var name: String = "",
-    var age: Int = 0,
-    var gender: String = "",
-    var address: String = "",
-    var phone: String = "",
-    var email: String = ""
-){
-    fun display(name: String, age: Int, gender: String){
-         println("Name: $name, Age: $age, Gender: $gender")
+class Car (var brand:String,var year:Int,var color:String){
+    fun brake(){
+        println("Braking")
+    }
+
+    fun ride(){
+        println("Riding")
     }
 }
-    
+
 fun main(){
-    var student1 = student(name = "John", age = 25, gender = "Male", address = "New York", phone = "1234567890", email = "efpyi@example.com")
-    var student2 = student(name = "Jane", age = 26, gender = "Female", address = "New York", phone = "1234567890",  email = "efpyi@example.com")
-    
-    //displaying student1
 
-    println(student1.name)
-    println(student1.age)
-    println(student1.gender)
-    println(student1.address)
-    println(student1.phone)
+    var c1 = Car ("BMW", 2020, "Red")
+    //assesing attributes
+    println(c1.brand)
+    println(c1.year)
+    println(c1.color)
 
-    //displaying student2
-
-    println(student2.name)
-    println(student2.age)
-    println(student2.gender)
-    println(student2.address)
-    println(student2.phone)
-
-    //displaying student1 by using display function
-    student1.display(student1.name, student1.age, student1.gender)
-
-    //displaying student2 by using display function
-    student2.display(student2.name, student2.age, student2.gender)
+    //assesing methods
+    c1.brake()
+    c1.ride()
 }

@@ -1,32 +1,63 @@
-// Base class (superclass)
-open class Persons(val name: String, val age: Int) {
-    fun display() {
-        println("Name: $name, Age: $age")
+open class Person (var name: String, var age: Int){
+   
+    init{
+        println("name  is $name")
+        println("age is $age")
+    }
+
+    fun walk(){
+        println("$name is walking...")
+    }
+
+    fun eat (){
+        println("$name is eating...")
+    }
+
+    fun talk(){
+        println("$name is talking...")
     }
 }
 
-// Derived class (subclass)
-class Students(name: String, age: Int, val studentId: String) : Persons(name, age) {
-    fun study() {
-        println("$name is studying.")
+class Teacher(name: String, age: Int) :Person(name, age){
+   
+    fun teach(){
+        println("$name is a teacher...")
     }
 }
 
-class Teacher(name: String, age: Int, val subject: String) : Persons(name, age) {
-    fun teach() {
-        println("$name is teaching $subject.")
+class Player (name: String, age: Int) :Person(name, age){
+
+    fun play(){
+        println("$name is a player...")
     }
 }
 
-fun main() {
-    val students = Students("John", 20, "S12345")
-    val teacher = Teacher("Mrs. Smith", 35, "Mathematics")
+fun main(){
+    
+    //object of person class
+    var p1 = Person("sanjukta", 22)
+    
+    //using functions of person class
+    p1.walk()
 
-    students.display()
-    students.study()
+    //object of techer class
+    var t1 = Teacher("mili", 22)
+    
+    //fun belonging to teacher class
+    t1.teach()
+    
+    //fun belonging to parent class(Person) class
+    t1.walk()
 
-    println()
+    //object of player class
+    var pl1 =  Player("sanju", 22)
+    
+    //fun of parent class
+    pl1.walk()
+    pl1.eat()
+    pl1.talk()
+   
+    //fun of player class
+    pl1.play()
 
-    teacher.display()
-    teacher.teach()
 }
